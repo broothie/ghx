@@ -1,0 +1,9 @@
+package v
+
+{{- range $tag := . }}
+
+// {{ $tag }} creates a new "{{ $tag | toLower }}" HTML element
+func {{ $tag }}(attr Attr, nodes ...Node) Element {
+    return Tag("{{ $tag | toLower }}", attr, nodes...)
+}
+{{- end }}
